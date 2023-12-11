@@ -1,0 +1,46 @@
+body, .modall {
+    background-color: #0F2A3D !important;
+}
+
+h3, h1, p, #withdrawMoney {
+    color: #F5A454;
+}
+
+body::after {
+    position: absolute;
+    content: "";
+    background-color: #173b53;
+    inset: 0;
+    left: 35%;
+    z-index: -1;
+    clip-path: polygon(30% 0,
+            100% 0,
+            100% 100%,
+            20% 100%,
+            0% 70%);
+}
+
+.flex-banner {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.flex-item {
+    margin: 0 5px;
+}
+
+.container.col-10>p {
+    text-align: justify;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+#mainInputs {
+    display: none;
+    background: rgb(2, 53, 129, 0.1); /* This is the color F5A454 with 10% opacity */
+    backdrop-filter: blur(10px); /* This will blur the background */
+    -webkit-backdrop-filter: blur(10px); /* This is for Safari compatibility */
+}

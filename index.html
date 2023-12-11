@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+   <link rel="stylesheet" href="/bootstrap-5.3.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="flex-banner shadow sticky-top top-0">
+        <div class="flex-item"><button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                data-bs-target="#exampleModal2">Click for a surprise</button></div>
+        <div class="flex-item"><button class="btn btn-success btn-sm" onclick="playMusic()">Play Music</button></div>
+        <div class="flex-item"><button class="btn btn-danger btn-sm" onclick="pauseMusic()">Pause Music</button></div>
+    </div>
+    <div class="container col-lg-9 col-10">
+        <h3 class="mt-3">Welcome Nana,</h3>
+        <p class="my-3">As your father, Nana, I care a lot about you and I want the best for you. However, it saddens my heart that you are fond of squandering the money I made available to you and at the end of each day, you can't account for how much you spend again. As a result, I employed the services of a developer to build a simple budget app for to help you manage your finances. <span class="fw-bold">Click on the button below to get started.</span></p>
+        <p class="my-2">Love and light,</p>
+        <p class="my-2 text-decoration-underline">Daddy</p>
+        <div class="my-2 text-center">
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" id="withdrawMoney">Withdraw money</button>
+        </div>
+        <div class="my-4 shadow p-2 rounded-2" id="mainInputs">
+            <div class="row fw-bold my-3">
+                <p class="col-6" id="showDate"></p>
+                <p class="col-6 text-end" id="showMoney"></p>
+            </div>
+            <div class="alert my-1 alert-danger p-2 text-center" style="display: none;" id="emptyField">Input field(s) cannot be empty</div>
+            <input type="text" class="form-control my-2" placeholder="Enter item" id="item">
+            <input type="number" class="form-control my-2" placeholder="Enter price (₦)" id="price">
+            <small class="text-center alert alert-danger p-1 my-2" style="display: none;" id="overSpend">maximum amount exceeded</small>
+            <button class="btn btn-success btn-sm w-100" onclick="addBudget()">Add</button>
+            <div class="my-3">
+                <p id="showBudget"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modall">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Withdraw money</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Welcome,</p>
+                    <p id="showDateModal"></p>
+                    <p>You have ₦10,000 to spend today. If you wish to continue, press OK</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="showInputs()"
+                        data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Dear Daughter,</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow-y: auto; height: 80vh;">
+                    <p>My Dear Nana,</p>
+                    <p>As you grow into an independent young woman, learning how to manage your finances wisely is an
+                        invaluable life skill. That's why I built this simple budgeting app tailored just for you.
+
+                        I understand that budgets can seem restrictive or intimidating. But they are incredibly
+                        empowering once you embrace them. Think of this as your roadmap that helps you save for the
+                        things you want most in life – be it college, traveling the world or your first car.</p>
+
+                        <p>
+                            Here are my three main tips:
+                            <dl>
+                                <dt>Be Realistic</dt>
+                                <dd>A good budget allows room for enjoyment but is grounded in pragmatism. Make sure your income estimates are accurate and expenses realistic. Account for an emergency fund too!</dd>
+                                <dt>Be Diligent</dt>
+                                <dd>
+                                    Check your budget regularly, and use the app to analyze spending habits.
+                                    Unexpected splurges happen, but diligence will prevent financial stress.
+                                </dd>
+                                <dt>Be Honest</dt>
+                                <dd>
+                                    To me or yourself, hiding overspending helps no one. This app is judgement-free, designed just to support you.
+                                </dd>
+                            </dl>
+                        </p>
+                        <p>
+                            Learning to budget early in life brings a sense of control and confidence that I want for you. I’ll always be here if you need budgeting advice or help using the app. You’ve got this my smart girl!
+                        </p>
+                        <p>
+                            Love,<br>
+                            Dad
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+</body>
+
+</html>
